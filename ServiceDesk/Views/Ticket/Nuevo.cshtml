@@ -1,0 +1,64 @@
+﻿
+@model TicketViewModels
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>
+    <a style="float:right" href="@Url.Action("Index","Ticket")" ><i class="fas fa-arrow-circle-left"></i></a>
+    Nuevo ticket
+</h2>
+<hr />
+
+@using (Html.BeginForm("Nuevo", "Ticket", FormMethod.Post))
+{
+    <div class="form-group">
+        <label> Fecha de Generacion</label>
+        @Html.TextBoxFor(m => m.Ticket.FechaGeneracion, new { @class = "form-control" , @requerid = "requerid", @type = "Date" })
+    </div>
+
+    <div class="form-group">
+        <label> Estado </label>
+        <select name="Ticket.IdEstado" class="form-control" required>
+            <option value="">Seleccione ...</option>
+            @foreach(var estado in Model.Estados)
+                {
+                    <option value="@estado.Id">@estado.Nombre</option>
+                }
+        </select>
+        
+    </div>
+
+    <div class="form-group">
+        <label> Usuario </label>
+        <select name="Ticket.IdUsuario" class="form-control" required>
+            <option value="">Seleccione ...</option>
+            @foreach (var usuario in Model.Usuarios)
+            {
+                <option value="@usuario.id">@usuario.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label> Descripcion </label>
+        @Html.TextAreaFor(m => m.Ticket.Descripcion, new { @class = "form-control", @requerid = "requerid" })
+    </div>
+
+    <div class="form-group">
+        <label> Responsable </label>
+        <select name="Ticket.IdResponsable" class="form-control" required>
+            <option value="">Seleccione ...</option>
+            @foreach (var responsable in Model.Responsables)
+            {
+                <option value="@responsable.Id">@responsable.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-success"/>
+    </div>
+
+}
+
