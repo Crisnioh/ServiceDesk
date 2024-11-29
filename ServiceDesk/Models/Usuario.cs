@@ -16,7 +16,7 @@ namespace ServiceDesk.Models
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -33,6 +33,10 @@ namespace ServiceDesk.Models
         [Required]
         [StringLength(50)]
         public string Email { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string Password { get; set; }
 
         public bool Activo { get; set; }
 

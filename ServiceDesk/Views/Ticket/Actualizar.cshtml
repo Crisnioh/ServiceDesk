@@ -41,7 +41,7 @@
             <option value="">Seleccione ...</option>
             @foreach (var usuario in Model.Usuarios)
             {
-                <option value="@usuario.id" @(usuario.id == Model.Ticket.IdUsuario ? "selected" : "")>@usuario.Nombre</option>
+                <option value="@usuario.Id" @(usuario.Id == Model.Ticket.IdUsuario ? "selected" : "")>@usuario.Nombre</option>
             }
         </select>
     </div>

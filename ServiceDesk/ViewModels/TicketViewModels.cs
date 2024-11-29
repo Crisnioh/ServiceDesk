@@ -11,7 +11,7 @@ namespace ServiceDesk.ViewModels
         public Ticket Ticket { get; set; }
 
         public List<Responsable> Responsables { get; set; }
-        public List<Usuario> Usuarios{ get; set; }
+        public List<Usuario> Usuarios { get; set; }
         public List<Estado> Estados { get; set; }
 
     }
